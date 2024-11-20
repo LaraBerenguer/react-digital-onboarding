@@ -26,18 +26,22 @@ export default function App() {
       bgColor: '#edc73f',
       image: meditation
     },
-  ]
+  ];
 
   const [step, setStep] = useState(0);
   const currentCardData = tutorialData[step];
 
   const nextStep = () => {
     setStep(step => step + 1);
-  }
+  };
+
+  const prevStep = () => {
+    setStep(step => step - 1);
+  };
 
   return (
     <Card title={currentCardData.title} description={currentCardData.description
     } image={currentCardData.image} bgColor={currentCardData.bgColor}
-    nextStep={nextStep} />
+    nextStep={nextStep} prevStep={prevStep} currentStep={step}/>
   );
 }

@@ -85,6 +85,15 @@ export const NextButton = styled.button`
     border: solid 1px black;
 `;
 
+export const PrevButton = styled.button`
+    margin: 16px 0 16px 16px;    
+    background-color: transparent;
+    color: grey;
+    padding: 15px;
+    border-radius: 35px;
+    border: solid 1px grey;
+`
+
 // para el media la web de Mariam, inspeccionar en esa web, encajarlo en el tamaño que quiero y pegarlo en el @media de cada elemento
 
 /*@media (max-width: 400px) { CardContainer { width: 100%; /* Ajusta el ancho al tamaño de la ventana gráfica height: auto; Permite que la altura se ajuste automáticamente */

@@ -1,8 +1,11 @@
-import { CardContainer, CardWrapper, ImgSection, Content, CardImage, TitleSection, TextSection, NextButton, ButtonSection, Title, ButtonLeft, ButtonRigth } from './cardStyles.jsx';
+import { CardContainer, CardWrapper, ImgSection, Content, CardImage, TitleSection, TextSection, NextButton, PrevButton, ButtonSection, Title, ButtonLeft, ButtonRigth } from './cardStyles.jsx';
 
 
-function Card({ title, description, image, bgColor, nextStep }) {
+function Card({ title, description, image, bgColor, nextStep, prevStep, currentStep }) {
 
+    console.log("step: ", currentStep);  
+
+    //step > 1 ? PrevButton.display = none : step < 1 ? NextButton.display = none : PrevButton && NextButton;
 
     return (
         <CardContainer>
@@ -18,20 +21,18 @@ function Card({ title, description, image, bgColor, nextStep }) {
                         {description}
                     </TextSection>
                     <ButtonSection>
-                        <ButtonLeft></ButtonLeft>
+                        <ButtonLeft>                            
+                        </ButtonLeft>
                         <ButtonRigth>
-                            <NextButton onClick={nextStep}>→</NextButton>
+                            {currentStep > 0 && (<PrevButton onClick={prevStep}>←</PrevButton>)}
+                            {currentStep < 2 && (<NextButton onClick={nextStep}>→</NextButton>)}
                         </ButtonRigth>
                     </ButtonSection>
 
                 </Content>
 
             </CardWrapper>
-        </CardContainer>
-
-        //nombrar contenedores
-        //estilar contenedores con styled.div (ejemplo)
-        //cuanto más divida más fácil es para estilar
+        </CardContainer>        
     );
 }
 
