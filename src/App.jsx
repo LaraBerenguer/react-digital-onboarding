@@ -25,7 +25,7 @@ export default function App() {
       description: 'Resting well and disconnecting is vital. This way you will reduce stress and anxiety. You will improve your concentration and consolidate your learning',
       bgColor: '#edc73f',
       image: meditation
-    },
+    }    
   ];
 
   const [step, setStep] = useState(0);
@@ -42,6 +42,6 @@ export default function App() {
   return (
     <Card title={currentCardData.title} description={currentCardData.description
     } image={currentCardData.image} bgColor={currentCardData.bgColor}
-    nextStep={nextStep} prevStep={prevStep} currentStep={step}/>
+    nextStep={nextStep} prevStep={prevStep} currentStep={step} dataLength={tutorialData.length}/>
   );
 }

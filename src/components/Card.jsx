@@ -1,9 +1,9 @@
-import { CardContainer, CardWrapper, ImgSection, Content, CardImage, TitleSection, TextSection, NextButton, PrevButton, ButtonSection, Title, ButtonLeft, ButtonRigth } from './cardStyles.jsx';
+import { CardContainer, CardWrapper, ImgSection, CardImage, Content, TitleSection, Title, TextSection, ButtonSection, ButtonLeft, ButtonRigth, NextButton, PrevButton } from './cardStyles.jsx';
+import Indicator from './Indicator.jsx';
 
+function Card({ title, description, image, bgColor, nextStep, prevStep, currentStep, dataLength }) {
 
-function Card({ title, description, image, bgColor, nextStep, prevStep, currentStep }) {
-
-    console.log("step: ", currentStep);  
+    console.log("step: ", currentStep);
 
     //step > 1 ? PrevButton.display = none : step < 1 ? NextButton.display = none : PrevButton && NextButton;
 
@@ -21,18 +21,19 @@ function Card({ title, description, image, bgColor, nextStep, prevStep, currentS
                         {description}
                     </TextSection>
                     <ButtonSection>
-                        <ButtonLeft>                            
+                        <ButtonLeft>
+                            <Indicator currentStep={currentStep} dataLength={dataLength} />
                         </ButtonLeft>
-                        <ButtonRigth>
+                        <ButtonRigth>                                                       
                             {currentStep > 0 && (<PrevButton onClick={prevStep}>←</PrevButton>)}
-                            {currentStep < 2 && (<NextButton onClick={nextStep}>→</NextButton>)}
+                            {currentStep < dataLength - 1 && (<NextButton onClick={nextStep}>→</NextButton>)}
                         </ButtonRigth>
                     </ButtonSection>
 
                 </Content>
 
             </CardWrapper>
-        </CardContainer>        
+        </CardContainer>
     );
 }
 
