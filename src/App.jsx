@@ -39,9 +39,14 @@ export default function App() {
     setStep(step => step - 1);
   };
 
+  const goToStep = (indicatorStep) => {
+    setStep(indicatorStep);
+    console.log({indicatorStep});
+  }
+
   return (
     <Card title={currentCardData.title} description={currentCardData.description
     } image={currentCardData.image} bgColor={currentCardData.bgColor}
-    nextStep={nextStep} prevStep={prevStep} currentStep={step} dataLength={tutorialData.length}/>
+    nextStep={nextStep} prevStep={prevStep} currentStep={step} dataLength={tutorialData.length} goToStep={goToStep}/>
   );
 }

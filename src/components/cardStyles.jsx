@@ -83,6 +83,9 @@ export const NextButton = styled.button`
     padding: 15px;
     border-radius: 35px;
     border: solid 1px black;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const PrevButton = styled.button`
@@ -92,6 +95,9 @@ export const PrevButton = styled.button`
     padding: 15px;
     border-radius: 35px;
     border: solid 1px grey;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 // para el media la web de Mariam, inspeccionar en esa web, encajarlo en el tamaño que quiero y pegarlo en el @media de cada elemento
