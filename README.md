@@ -1,8 +1,45 @@
-# React + Vite
+# React digital Onboarding with Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📄 Description
 
-Currently, two official plugins are available:
+My first React project! A simple and interactive onboarding experience built with React and Vite, featuring animations with Motion and a clean design. The app demonstrates transitions between cards and dynamic indicators.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Technologies Used
+
+- React
+- Vite
+- Styled-Components
+- Motion (formerly Framer Motion)
+
+## 📋 Requirements
+
+- Node.js and npm installed on your system. You can download them from [nodejs.org](https://nodejs.org/).
+
+## 🚀 Installation
+
+**✔️ Step 1:** Clone the repository to your local machine (using your username):
+
+```bash
+git clone https://github.com/your-username/digital-onboarding.git
+cd digital-onboarding
+```
+
+**✔️ Step 2:**  Install the required dependencies:
+
+```bash
+npm install
+```
+
+**✔️ Step 3:**  Start the development server:
+
+```bash
+npm run dev
+```
+Once the server is running, you'll see a URL similar to:
+
+```bash
+ > Local: http://localhost:5173/
+```
+
+## 🤝 Contributions
+If you want to contribute or report issues, feel free to create an issue or submit a pull request.

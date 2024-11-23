@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "motion/react";
 
 const animationVariants = {
     enter: (direction) => ({
-        x: direction > 0 ? '50%' : '-150%',
-        opacity: 1,
+        x: direction > 0 ? '100%' : '-100%',
+        opacity: 0,
         position: 'absolute'
     }),
     center: {
@@ -14,8 +14,8 @@ const animationVariants = {
         position: 'absolute'
     },
     exit: (direction) => ({
-        x: direction < 0 ? '50%' : '-150%',
-        opacity: 1,
+        x: direction < 0 ? '100%' : '-100%',
+        opacity: 0,
         position: 'absolute'
     }),
 };
@@ -28,11 +28,7 @@ function Card({ title, description, image, bgColor, nextStep, prevStep, currentS
                 <ImgSection>
 
                     <AnimatePresence initial={false} custom={direction}>
-
-                        <CardImage 
-                            src={image} 
-                            alt={title} 
-                            as={motion.img}
+                        <CardImage src={image} alt={title} as={motion.img}
                             key={currentStep}
                             custom={direction}
                             initial="enter"

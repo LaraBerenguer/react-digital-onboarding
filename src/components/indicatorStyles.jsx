@@ -9,11 +9,11 @@ export const IndicatorContainer = styled.div`
 `;
 
 export const Bola = styled.button`
-    width: ${props => (props.$active ? '20px' : '10px')};
+    width: 10px;
     height: 10px;
     border-radius: 5px;
     border: solid 1px transparent;
-    background-color: ${props => (props.$active ? 'black' : 'grey')}; 
+    background-color: #808080; 
     &:hover {
         cursor: pointer;
     }
