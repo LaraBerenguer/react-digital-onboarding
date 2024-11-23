@@ -1,17 +1,49 @@
 import { CardContainer, CardWrapper, ImgSection, CardImage, Content, TitleSection, Title, TextSection, ButtonSection, ButtonLeft, ButtonRigth, NextButton, PrevButton } from './cardStyles.jsx';
 import Indicator from './Indicator.jsx';
+import { motion, AnimatePresence } from "motion/react";
 
-function Card({ title, description, image, bgColor, nextStep, prevStep, currentStep, dataLength, goToStep }) {
+const animationVariants = {
+    enter: (direction) => ({
+        x: direction > 0 ? '50%' : '-150%',
+        opacity: 1,
+        position: 'absolute'
+    }),
+    center: {
+        x: '-50%',
+        opacity: 1,
+        position: 'absolute'
+    },
+    exit: (direction) => ({
+        x: direction < 0 ? '50%' : '-150%',
+        opacity: 1,
+        position: 'absolute'
+    }),
+};
 
-    console.log("step: ", currentStep);
-
-    //step > 1 ? PrevButton.display = none : step < 1 ? NextButton.display = none : PrevButton && NextButton;
-
+function Card({ title, description, image, bgColor, nextStep, prevStep, currentStep, dataLength, goToStep, direction }) {
+    
     return (
         <CardContainer>
-            <CardWrapper bgColor={bgColor}>
+            <CardWrapper $bgColor={bgColor}>
                 <ImgSection>
-                    <CardImage src={image} alt={title}></CardImage>
+
+                    <AnimatePresence initial={false} custom={direction}>
+
+                        <CardImage 
+                            src={image} 
+                            alt={title} 
+                            as={motion.img}
+                            key={currentStep}
+                            custom={direction}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            variants={animationVariants}
+                            transition={{ duration: 0.5 }}>
+
+                        </CardImage>
+                    </AnimatePresence>
+
                 </ImgSection>
                 <Content>
                     <TitleSection>
@@ -24,9 +56,11 @@ function Card({ title, description, image, bgColor, nextStep, prevStep, currentS
                         <ButtonLeft>
                             <Indicator currentStep={currentStep} dataLength={dataLength} goToStep={goToStep} />
                         </ButtonLeft>
-                        <ButtonRigth>                                                       
-                            {currentStep > 0 && (<PrevButton onClick={prevStep}>←</PrevButton>)}
-                            {currentStep < dataLength - 1 && (<NextButton onClick={nextStep}>→</NextButton>)}
+                        <ButtonRigth>
+                            {currentStep > 0 && (<PrevButton onClick={prevStep} as={motion.button} whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>←</PrevButton>)}
+                            {currentStep < dataLength - 1 && (<NextButton onClick={nextStep} as={motion.button} whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}>→</NextButton>)}
                         </ButtonRigth>
                     </ButtonSection>
 

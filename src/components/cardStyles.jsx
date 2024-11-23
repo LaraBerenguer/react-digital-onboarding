@@ -12,11 +12,13 @@ export const CardContainer = styled.div`
     border-radius: 25px;
 `;
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.div.withConfig({
+    shouldForwardProp: (prop) => prop !== '$bgColor',
+  })`
     width: 375px;
     height: 667px;     
     overflow: hidden;
-    background-color: ${({ bgColor }) => bgColor || '#fff'};
+    background-color: ${({ $bgColor }) => $bgColor || '#fff'};
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -25,6 +27,7 @@ export const CardWrapper = styled.div`
 
 export const ImgSection = styled.section`
     height: 60%;
+    position: relative;
 
 `;
 
@@ -34,6 +37,7 @@ export const CardImage = styled.img`
     height: 100%;
     object-fit: fill;
     box-sizing: border-box;
+    position: absolute;
 `;
 
 export const Content = styled.div`

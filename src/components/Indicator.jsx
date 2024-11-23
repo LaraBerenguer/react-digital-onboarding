@@ -1,7 +1,6 @@
 import { Bola, IndicatorContainer } from './indicatorStyles';
 
-function Indicator({ currentStep, dataLength, goToStep }) {
-console.log("tomate")    
+function Indicator({ currentStep, dataLength, goToStep }) { 
     return (
         <IndicatorContainer>
             {Array(dataLength).fill().map((_, index) => (

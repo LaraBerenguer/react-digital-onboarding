@@ -29,17 +29,21 @@ export default function App() {
   ];
 
   const [step, setStep] = useState(0);
+  const [direction, setDirection] = useState(0);
   const currentCardData = tutorialData[step];
 
   const nextStep = () => {
+    setDirection(1);
     setStep(step => step + 1);
   };
 
   const prevStep = () => {
+    setDirection(-1);
     setStep(step => step - 1);
   };
 
   const goToStep = (indicatorStep) => {
+    setDirection(indicatorStep > step ? 1 : -1);
     setStep(indicatorStep);
     console.log({indicatorStep});
   }
@@ -47,6 +51,6 @@ export default function App() {
   return (
     <Card title={currentCardData.title} description={currentCardData.description
     } image={currentCardData.image} bgColor={currentCardData.bgColor}
-    nextStep={nextStep} prevStep={prevStep} currentStep={step} dataLength={tutorialData.length} goToStep={goToStep}/>
+    nextStep={nextStep} prevStep={prevStep} currentStep={step} dataLength={tutorialData.length} goToStep={goToStep} direction={direction}/>
   );
 }
