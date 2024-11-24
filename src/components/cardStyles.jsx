@@ -103,7 +103,3 @@ export const PrevButton = styled.button`
         cursor: pointer;
     }
 `
-
-// para el media la web de Mariam, inspeccionar en esa web, encajarlo en el tamaño que quiero y pegarlo en el @media de cada elemento
-
-/*@media (max-width: 400px) { CardContainer { width: 100%; /* Ajusta el ancho al tamaño de la ventana gráfica height: auto; Permite que la altura se ajuste automáticamente */
