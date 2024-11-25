@@ -1,8 +1,10 @@
-# React digital Onboarding with Vite
+# React digital onboarding
 
 ## 📄 Description
 
 My first React project! A simple and interactive onboarding experience built with React and Vite, featuring animations with Motion and a clean design. The app demonstrates transitions between cards and dynamic indicators.
+
+This project has a Javascript and a Typescript version. More on that at the end of the readme.
 
 ## 💻 Technologies Used
 
@@ -39,6 +41,19 @@ Once the server is running, you'll see a URL similar to:
 
 ```bash
  > Local: http://localhost:5173/
+```
+
+## 🔀 Project Versions
+
+This repository contains two versions of the project:
+
+1. **Main (JavaScript)**: The primary version of the project, implemented in JavaScript.
+2. **typescript-version**: An alternative version of the project, implemented in TypeScript.
+
+To switch to the Typescript branch:
+
+```bash
+git checkout typescript-version
 ```
 
 ## 🤝 Contributions
