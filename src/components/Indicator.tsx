@@ -15,7 +15,7 @@ interface IndicatorProps {
 function Indicator({ currentStep, dataLength, goToStep }: IndicatorProps) {
     return (
         <IndicatorContainer>
-            {Array(dataLength).fill(null).map((_, index) => (
+            {Array(dataLength).fill(null).map((_, index: number) => (
                 <Bola key={index} $active={index === currentStep} onClick={() => goToStep(index)}
                     as={motion.button}
                     animate={index === currentStep ? "active" : "inactive"}
