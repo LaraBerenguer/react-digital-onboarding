@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Card from './components/Card.jsx';
+import Card from './components/Card';
 import management from "./assets/time_managment.svg";
 import programming from "./assets/programming.svg";
 import meditation from "./assets/meditation.svg";

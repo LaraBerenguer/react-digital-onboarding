@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface BolaProps {
+    $active: boolean;
+}
+
 export const IndicatorContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -8,7 +12,7 @@ export const IndicatorContainer = styled.div`
     margin: 16px;
 `;
 
-export const Bola = styled.button`
+export const Bola = styled.button<BolaProps>`
     width: 10px;
     height: 10px;
     border-radius: 5px;

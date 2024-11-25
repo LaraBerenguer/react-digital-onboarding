@@ -1,5 +1,9 @@
 import styled from 'styled-components';
+import { motion } from 'motion/react';
 
+interface CardWrapperProps {
+    $bgColor?: string;
+}
 
 export const CardContainer = styled.div`
     height: 100vh;
@@ -14,7 +18,7 @@ export const CardContainer = styled.div`
 
 export const CardWrapper = styled.div.withConfig({
     shouldForwardProp: (prop) => prop !== '$bgColor',
-  })`
+  })<CardWrapperProps>`
     width: 375px;
     height: 667px;     
     overflow: hidden;
@@ -31,7 +35,7 @@ export const ImgSection = styled.section`
 
 `;
 
-export const CardImage = styled.img`
+export const CardImage = styled(motion.img)`
     padding: 30px;
     width: 100%;
     height: 100%;
